@@ -1,0 +1,153 @@
+.dashboard-menu {
+  background-color: $gray-900;
+  flex: 0 0 auto;
+}
+.menu {
+  &__button.btn {
+    margin: 40px 24px 37px 24px;
+  }
+  &__content__links {
+    & > a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 123%;
+      opacity: 0.9;
+      text-decoration-color: rgba(#fff, 0.5);
+    }
+  }
+  &__content__link:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+  &__content__link img {
+    height: 17px;
+    width: 17px;
+  }
+  &-hr {
+    margin: 2.375rem 1.25rem;
+    &::selection {
+      color: none;
+      background: none;
+    }
+    &::-moz-selection {
+      color: none;
+      background: none;
+    }
+  }
+  &__extension-info {
+    text-decoration: none;
+    & > div {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      text-align: left;
+
+      width: 100%;
+    }
+    & > .google-logo {
+      width: 19.25px;
+      height: 19.25px;
+    }
+
+    & > .flg-logo {
+      display: none;
+    }
+  }
+  &__footer {
+    margin: auto 0 52px 31px;
+    & a {
+      color: #ffffff;
+      opacity: 0.4;
+      display: block;
+      font-size: 0.875rem;
+      line-height: 118%;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      &:not(:last-child) {
+        margin-bottom: 0.8125rem;
+      }
+      &:not(:first-child) {
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .dashboard-menu {
+    min-width: 225px;
+    max-width: 14.93vw;
+  }
+  .menu {
+    &__extension-info {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 11px;
+      border-radius: 6px;
+      margin-top: 56px;
+      padding: 0.4rem 0.5rem;
+      background: #323232;
+
+      &:hover {
+        background: #515151;
+      }
+
+      & > div {
+        margin-top: 10px;
+        color: #eae9e9;
+      }
+
+      & > .google-logo {
+        width: 16px;
+        height: 16px;
+      }
+
+      & > .flg-logo {
+        display: block;
+        width: 27px;
+        height: 15px;
+      }
+    }
+    &__content__links {
+      padding: 0 20px;
+
+      & > .active {
+        background: #6e5c26;
+      }
+    }
+    &__content__link {
+      background-color: #323232;
+      border-radius: 6px;
+      padding: 3px 14px;
+      min-height: 33px;
+
+      text-decoration: none;
+
+      &:hover {
+        background: #515151;
+      }
+    }
+    &__content__link img {
+      margin-right: 0.6rem;
+      height: 20px;
+      width: 20px;
+    }
+    &__content__link:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .menu__content {
+    align-items: center;
+  }
+  .menu__button.btn {
+    margin: 20px 6px 40px 6px;
+  }
+  .menu__content__links {
+    margin-bottom: 40px;
+  }
+}

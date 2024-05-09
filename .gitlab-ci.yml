@@ -1,0 +1,29 @@
+include:
+  - project: "devops/ci-cd-includes"
+    ref: deploy_k8s
+    file: "/functions/build_kaniko.yaml"
+  - project: "devops/ci-cd-includes"
+    file: "/functions/deploy_k8s.yaml"
+  - project: "devops/ci-cd-includes"
+    file: "/variables.yaml"
+
+Build:
+    stage: build
+    extends: .build
+    only:
+      - main
+
+Build-dev:
+    stage: build
+    extends: .build
+    environment: dev
+    before_script:
+      - cat $ENV >> $CI_PROJECT_DIR/.env
+    only:
+      - dev
+    
+Deploy-k8s-dev:
+    extends: .deploy_k8s
+    environment: dev
+    only:
+      - dev
